@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>七上八下</title>
+    <link>https://naxiro.com/</link>
+    <description>Recent content on 七上八下</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 16 Apr 2019 21:14:18 +0800</lastBuildDate>
+    
+	<atom:link href="https://naxiro.com/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>迁移Hugo后写的第一篇博文</title>
+      <link>https://naxiro.com/posts/my-first-post-in-hugo/</link>
+      <pubDate>Tue, 16 Apr 2019 21:14:18 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/my-first-post-in-hugo/</guid>
+      <description>把博客从Hexo迁移到了Hugo上。我从新浪博客迁移到Hexo后，用Hexo只写一共三、四篇博文，而且都是小短文，好惭愧。回看这两年却是很忙，先是博士毕业，再后来是家里的各种琐事耗费了我几乎全部的精力。不要说写博文了，个人的技术也基本上没有什么成长。
+最近重拾Go语言，突然想到有个golang写的博客系统Hugo，所以马上就弄起来，我这次把先前在Hexo上的三篇小短文也给弄来了。至于新浪博客上的博文，那就算了吧，太多了，实在没有精力了。希望从今天开始，继续把博文写起来，把笔记记起来，该学的学起来。
+最后还是不能免了俗套的 -
+ Hello, world! 你好，世界！
+ </description>
+    </item>
+    
+    <item>
+      <title>在Visual Studio Code中设置Integrated Shell为msys2的bash</title>
+      <link>https://naxiro.com/posts/2017-10-07-post/</link>
+      <pubDate>Sat, 07 Oct 2017 23:23:07 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/2017-10-07-post/</guid>
+      <description>最近一段时间都在使用Visual Studio Code作为主力编辑器，不得不说这款编辑器实在是好用，我完全放弃了Atom。在Windows下，Visual Studio Code的默认终端是Powershell，现在需要改为比较顺手的msys2中的bash，在Visual Studio Code中的用户设置中添加以下代码：
+&amp;quot;terminal.integrated.shell.windows&amp;quot;: &amp;quot;/path/to/bash&amp;quot;, &amp;quot;terminal.integrated.shellArgs.windows&amp;quot;: [ &amp;quot;--login&amp;quot;, &amp;quot;-i&amp;quot; ] &amp;quot;terminal.integrated.env.windows&amp;quot;: { &amp;quot;CHERE_INVOKING&amp;quot;: 1, &amp;quot;MSYSTEM&amp;quot;: &amp;quot;MINGW64&amp;quot; }  前面两个设置很好理解，最后设置的terminal.integrated.env.windows的两个环境变量非常重要，其中CHERE_INVOKING的作用是打开终端的默认工作路径为当前编辑文件所在路径，MSYSTEM主要是指msys2采用64位的环境。</description>
+    </item>
+    
+    <item>
+      <title>爆发</title>
+      <link>https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/</link>
+      <pubDate>Sat, 21 Jan 2017 00:29:43 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/</guid>
+      <description>咚 咚 孩子停止了吵闹 我的内心 到底是哭是笑
+最后的结果 就是那样 看吧看吧 谁能比谁更烂
+哈哈哈 闹太套</description>
+    </item>
+    
+    <item>
+      <title>kde5中Konsole中文字体被截断的临时解决方法</title>
+      <link>https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <pubDate>Mon, 16 Jan 2017 21:37:48 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <description>当前系统的主要版本为：
+ Ubuntu: 16.04 Konsole: 16.04.3 KDE框架: 5.28.0  Konsole中的中文字体下半身被完全截断，如图所示。
+在网络上搜索了一下发现可能是中文字体的基线没有和英文字体的基线对齐造成的。所以直接将Konsole的字体设置成中文字体应该可以解决。但是发现Konsole的选择字体列表中并没有任何的中文字体……最后还是直接修改konsole的配置文件。google了一番，最后才发现配置文件被移到了：~/.local/share/apps/konsole/xxx.profile。其中&amp;rdquo;xxx&amp;rdquo;指的是Profile的名称。
+打开此配置文件，将[Appearance]下的
+Font=FreeMono,13,-1,0,50,0,0,0,0,0  修改成任意一款中文字体，比如我选择的是文泉驿等宽微米黑
+Font=WenQuanYi Micro Hei Mono,13,-1,0,50,0,0,0,0,0  问题解决，如图所示
+今天在此处看到这个Bug居然在13年就有人提出了，到现在17年1月了还没有修复，看来是需要考虑离开KDE了。</description>
+    </item>
+    
+  </channel>
+</rss>

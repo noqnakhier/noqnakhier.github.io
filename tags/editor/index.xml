@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>editor on 七上八下</title>
+    <link>https://naxiro.com/tags/editor/</link>
+    <description>Recent content in editor on 七上八下</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 07 Oct 2017 23:23:07 +0800</lastBuildDate>
+    
+	<atom:link href="https://naxiro.com/tags/editor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>在Visual Studio Code中设置Integrated Shell为msys2的bash</title>
+      <link>https://naxiro.com/posts/2017-10-07-post/</link>
+      <pubDate>Sat, 07 Oct 2017 23:23:07 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/2017-10-07-post/</guid>
+      <description>最近一段时间都在使用Visual Studio Code作为主力编辑器，不得不说这款编辑器实在是好用，我完全放弃了Atom。在Windows下，Visual Studio Code的默认终端是Powershell，现在需要改为比较顺手的msys2中的bash，在Visual Studio Code中的用户设置中添加以下代码：
+&amp;quot;terminal.integrated.shell.windows&amp;quot;: &amp;quot;/path/to/bash&amp;quot;, &amp;quot;terminal.integrated.shellArgs.windows&amp;quot;: [ &amp;quot;--login&amp;quot;, &amp;quot;-i&amp;quot; ] &amp;quot;terminal.integrated.env.windows&amp;quot;: { &amp;quot;CHERE_INVOKING&amp;quot;: 1, &amp;quot;MSYSTEM&amp;quot;: &amp;quot;MINGW64&amp;quot; }  前面两个设置很好理解，最后设置的terminal.integrated.env.windows的两个环境变量非常重要，其中CHERE_INVOKING的作用是打开终端的默认工作路径为当前编辑文件所在路径，MSYSTEM主要是指msys2采用64位的环境。</description>
+    </item>
+    
+  </channel>
+</rss>
