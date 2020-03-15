@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://naxiro.com/" />
-<meta property="og:updated_time" content="2019-04-16T21:14:18+08:00" />
+<meta property="og:updated_time" content="2020-03-15T20:40:42+08:00" />
 <meta itemprop="name" content="七上八下">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="七上八下"/>
@@ -130,6 +130,35 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/clash-time-error/" class="color-inherit dim link">
+            系统时间错误造成Clash代理无法上网
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志， 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码ERR_CONNECTION_ERROR。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。
+正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。 接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！ 随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了ERR_CONNECTION_ERROR错误。
+真相大白了，系统时间错误造成Clash不能正常访问。最后，在Manjaro下把系统时间设置成和Windows一致，都使用本地时间，使用Windows系统来同步系统时间，故障完美解决。
+Linux设置系统时间为本地时间方法 将Linux系统时间设置为本地时间
+timedatectl set-local-rtc 1 --adjust-system-clock 使用下列命令可以恢复UTC时间
+timedatectl set-local-rtc 0 --adjust-system-clock 
+        </div>
+          <a href="/posts/clash-time-error/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/my-first-post-in-hugo/" class="color-inherit dim link">
             迁移Hugo后写的第一篇博文
             </a>
@@ -175,38 +204,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="color-inherit dim link">
-            爆发
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          咚 咚 孩子停止了吵闹 我的内心 到底是哭是笑
-最后的结果 就是那样 看吧看吧 谁能比谁更烂
-哈哈哈 闹太套
-        </div>
-          <a href="/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3"></h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="link black dim">
+              爆发
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="link black dim">

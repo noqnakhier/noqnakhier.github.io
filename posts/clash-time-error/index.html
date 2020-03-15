@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>七上八下  | 系统时间错误造成Clash代理无法上网</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.67.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="系统时间错误造成Clash代理无法上网" />
+<meta property="og:description" content="最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志， 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码ERR_CONNECTION_ERROR。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。
+正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。 接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！ 随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了ERR_CONNECTION_ERROR错误。
+真相大白了，系统时间错误造成Clash不能正常访问。最后，在Manjaro下把系统时间设置成和Windows一致，都使用本地时间，使用Windows系统来同步系统时间，故障完美解决。
+Linux设置系统时间为本地时间方法 将Linux系统时间设置为本地时间
+timedatectl set-local-rtc 1 --adjust-system-clock 使用下列命令可以恢复UTC时间
+timedatectl set-local-rtc 0 --adjust-system-clock " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://naxiro.com/posts/clash-time-error/" />
+<meta property="article:published_time" content="2020-03-15T20:40:42+08:00" />
+<meta property="article:modified_time" content="2020-03-15T20:40:42+08:00" />
+<meta itemprop="name" content="系统时间错误造成Clash代理无法上网">
+<meta itemprop="description" content="最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志， 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码ERR_CONNECTION_ERROR。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。
+正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。 接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！ 随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了ERR_CONNECTION_ERROR错误。
+真相大白了，系统时间错误造成Clash不能正常访问。最后，在Manjaro下把系统时间设置成和Windows一致，都使用本地时间，使用Windows系统来同步系统时间，故障完美解决。
+Linux设置系统时间为本地时间方法 将Linux系统时间设置为本地时间
+timedatectl set-local-rtc 1 --adjust-system-clock 使用下列命令可以恢复UTC时间
+timedatectl set-local-rtc 0 --adjust-system-clock ">
+<meta itemprop="datePublished" content="2020-03-15T20:40:42&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-15T20:40:42&#43;08:00" />
+<meta itemprop="wordCount" content="24">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="系统时间错误造成Clash代理无法上网"/>
+<meta name="twitter:description" content="最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志， 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码ERR_CONNECTION_ERROR。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。
+正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。 接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！ 随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了ERR_CONNECTION_ERROR错误。
+真相大白了，系统时间错误造成Clash不能正常访问。最后，在Manjaro下把系统时间设置成和Windows一致，都使用本地时间，使用Windows系统来同步系统时间，故障完美解决。
+Linux设置系统时间为本地时间方法 将Linux系统时间设置为本地时间
+timedatectl set-local-rtc 1 --adjust-system-clock 使用下列命令可以恢复UTC时间
+timedatectl set-local-rtc 0 --adjust-system-clock "/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="https://naxiro.com" class="f3 fw2 hover-white no-underline white-90 dib">
+      七上八下
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/posts/" title="Posts page">
+              Posts
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">系统时间错误造成Clash代理无法上网</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-03-15T20:40:42&#43;08:00">March 15, 2020</time>      
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。
+今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志，
+发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码<code>ERR_CONNECTION_ERROR</code>。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。</p>
+<p>正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。
+接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！
+随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了<code>ERR_CONNECTION_ERROR</code>错误。</p>
+<p>真相大白了，系统时间错误造成Clash不能正常访问。最后，在Manjaro下把系统时间设置成和Windows一致，都使用本地时间，使用Windows系统来同步系统时间，故障完美解决。</p>
+<h2 id="linux设置系统时间为本地时间方法">Linux设置系统时间为本地时间方法</h2>
+<p>将Linux系统时间设置为本地时间</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">timedatectl set-local-rtc <span style="color:#ae81ff">1</span> --adjust-system-clock
+</code></pre></div><p>使用下列命令可以恢复UTC时间</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">timedatectl set-local-rtc <span style="color:#ae81ff">0</span> --adjust-system-clock
+</code></pre></div><ul class="pa0">
+  
+</ul>
+<div class="mt6">
+        
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://naxiro.com" >
+    &copy; 2020 七上八下
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

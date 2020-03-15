@@ -6,10 +6,24 @@
     <description>Recent content in Posts on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 16 Apr 2019 21:14:18 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 20:40:42 +0800</lastBuildDate>
     
 	<atom:link href="https://naxiro.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>系统时间错误造成Clash代理无法上网</title>
+      <link>https://naxiro.com/posts/clash-time-error/</link>
+      <pubDate>Sun, 15 Mar 2020 20:40:42 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/clash-time-error/</guid>
+      <description>最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志， 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码ERR_CONNECTION_ERROR。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。
+正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。 接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！ 随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了ERR_CONNECTION_ERROR错误。
+真相大白了，系统时间错误造成Clash不能正常访问。最后，在Manjaro下把系统时间设置成和Windows一致，都使用本地时间，使用Windows系统来同步系统时间，故障完美解决。
+Linux设置系统时间为本地时间方法 将Linux系统时间设置为本地时间
+timedatectl set-local-rtc 1 --adjust-system-clock 使用下列命令可以恢复UTC时间
+timedatectl set-local-rtc 0 --adjust-system-clock </description>
+    </item>
     
     <item>
       <title>迁移Hugo后写的第一篇博文</title>

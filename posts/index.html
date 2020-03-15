@@ -35,7 +35,7 @@
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://naxiro.com/posts/" />
-<meta property="og:updated_time" content="2019-04-16T21:14:18+08:00" />
+<meta property="og:updated_time" content="2020-03-15T20:40:42+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -104,6 +104,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/clash-time-error/" class="link black dim">
+        系统时间错误造成Clash代理无法上网
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志， 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码ERR_CONNECTION_ERROR。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。
+正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。 接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！ 随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了ERR_CONNECTION_ERROR错误。
+真相大白了，系统时间错误造成Clash不能正常访问。最后，在Manjaro下把系统时间设置成和Windows一致，都使用本地时间，使用Windows系统来同步系统时间，故障完美解决。
+Linux设置系统时间为本地时间方法 将Linux系统时间设置为本地时间
+timedatectl set-local-rtc 1 --adjust-system-clock 使用下列命令可以恢复UTC时间
+timedatectl set-local-rtc 0 --adjust-system-clock 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/my-first-post-in-hugo/" class="link black dim">
         迁移Hugo后写的第一篇博文
       </a>
@@ -130,23 +150,6 @@
     <div class="nested-links f5 lh-copy nested-copy-line-height">
       最近一段时间都在使用Visual Studio Code作为主力编辑器，不得不说这款编辑器实在是好用，我完全放弃了Atom。在Windows下，Visual Studio Code的默认终端是Powershell，现在需要改为比较顺手的msys2中的bash，在Visual Studio Code中的用户设置中添加以下代码：
 &#34;terminal.integrated.shell.windows&#34;: &#34;/path/to/bash&#34;, &#34;terminal.integrated.shellArgs.windows&#34;: [ &#34;--login&#34;, &#34;-i&#34; ] &#34;terminal.integrated.env.windows&#34;: { &#34;CHERE_INVOKING&#34;: 1, &#34;MSYSTEM&#34;: &#34;MINGW64&#34; } 前面两个设置很好理解，最后设置的terminal.integrated.env.windows的两个环境变量非常重要，其中CHERE_INVOKING的作用是打开终端的默认工作路径为当前编辑文件所在路径，MSYSTEM主要是指msys2采用64位的环境。
-    </div>
-  </div>
-</div>
-</div>
-      
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="link black dim">
-        爆发
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      咚 咚 孩子停止了吵闹 我的内心 到底是哭是笑
-最后的结果 就是那样 看吧看吧 谁能比谁更烂
-哈哈哈 闹太套
     </div>
   </div>
 </div>
