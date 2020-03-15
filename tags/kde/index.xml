@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>kde on 七上八下</title>
     <link>https://naxiro.com/tags/kde/</link>
     <description>Recent content in kde on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <lastBuildDate>Mon, 16 Jan 2017 21:37:48 +0800</lastBuildDate>
     
 	<atom:link href="https://naxiro.com/tags/kde/index.xml" rel="self" type="application/rss+xml" />
@@ -19,7 +19,7 @@
       <guid>https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
       <description>当前系统的主要版本为：
  Ubuntu: 16.04 Konsole: 16.04.3 KDE框架: 5.28.0  Konsole中的中文字体下半身被完全截断，如图所示。
-在网络上搜索了一下发现可能是中文字体的基线没有和英文字体的基线对齐造成的。所以直接将Konsole的字体设置成中文字体应该可以解决。但是发现Konsole的选择字体列表中并没有任何的中文字体……最后还是直接修改konsole的配置文件。google了一番，最后才发现配置文件被移到了：~/.local/share/apps/konsole/xxx.profile。其中&amp;rdquo;xxx&amp;rdquo;指的是Profile的名称。
+在网络上搜索了一下发现可能是中文字体的基线没有和英文字体的基线对齐造成的。所以直接将Konsole的字体设置成中文字体应该可以解决。但是发现Konsole的选择字体列表中并没有任何的中文字体……最后还是直接修改konsole的配置文件。google了一番，最后才发现配置文件被移到了：~/.local/share/apps/konsole/xxx.profile。其中&amp;quot;xxx&amp;quot;指的是Profile的名称。
 打开此配置文件，将[Appearance]下的
 Font=FreeMono,13,-1,0,50,0,0,0,0,0  修改成任意一款中文字体，比如我选择的是文泉驿等宽微米黑
 Font=WenQuanYi Micro Hei Mono,13,-1,0,50,0,0,0,0,0  问题解决，如图所示
