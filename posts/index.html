@@ -4,12 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>七上八下 </title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
+    <title>七上八下</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.67.0" />
+    <meta name="generator" content="Hugo 0.69.2" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -17,7 +14,7 @@
 
     
     
-      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
     
 
     
@@ -27,15 +24,17 @@
     
 
     
-      <link href="https://naxiro.com/posts/index.xml" rel="alternate" type="application/rss+xml" title="七上八下" />
-      <link href="https://naxiro.com/posts/index.xml" rel="feed" type="application/rss+xml" title="七上八下" />
     
-
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="七上八下" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="七上八下" />
+      
+    
+    
     <meta property="og:title" content="Posts" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://naxiro.com/posts/" />
-<meta property="og:updated_time" content="2020-03-15T20:40:42+08:00" />
+<meta property="og:updated_time" content="2020-04-29T22:27:08+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Posts"/>
@@ -80,6 +79,9 @@
 
 
 
+
+
+
     </div>
   </div>
 </nav>
@@ -104,7 +106,26 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/clash-time-error/" class="link black dim">
+      <a href="https://naxiro.com/posts/rpgmaker_mv_error/" class="link black dim">
+        Archlinux下RPG Maker MV游戏错误解决方法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      我偶尔会玩一些小游戏，有一些小游戏是用RPG Maker MV制作的。最近我切回Archlinux，本来RPG Maker MV制作的游戏通常都会有Linux的原生版本，但是今天在Linux下，发现无法启动, 报了fontconfig一堆错误，最后报：Check failed: InitDefaultFont(). Could not find the default font，然后就core dumped。
+我估计是archlinux的fontconfig版本太新的原因，但是又懒得找到其他发行版的机器试试了。看着游戏目录里那一堆文件，原来是nwjs制作的，索性到nwjs去下载了预编译的最新版本，然后将其解压并覆盖了游戏目录。接着启动一试，成功启动游戏。
+但是游戏开头过后，黑屏错误，这时发现终端里报错ffmpeg无法解码流，这时上网查了查资料，原来官方编译的版本中的libffmpeg.so不带一些私有的解码器，而我这个游戏中的视频应该用到了私有编解码，再具体查看是VP9,所以上网想自己编译一个libffmpeg.so。再一查，编译这玩意儿要下载1个多G的文件，且不知道要编译多久。继续Google, 原来网上有热心网友一直在提供这个含私有解码器的libffmpeg.so, 具体链接在iteufel/nwjs-ffmpeg-prebuilt。下载与nwjs相对应的版本后，解压到游戏目录下lib覆盖即可。
+解决方法总结：  下载预编译好的nwjs, 点此下载 到iteufel/nwjs-ffmpeg-prebuilt下载对应版本的libffmpeg.so文件放入游戏目录下的lib文件中。   注意：不一定要选择最新的版本，我试了几个版本都没有成功，最后选择了nwjs-ffmpeg-prebuilt中标记为Stable的版本后才成功
+ 
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="https://naxiro.com/posts/clash-time-error/" class="link black dim">
         系统时间错误造成Clash代理无法上网
       </a>
     </h1>
@@ -124,7 +145,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/my-first-post-in-hugo/" class="link black dim">
+      <a href="https://naxiro.com/posts/my-first-post-in-hugo/" class="link black dim">
         迁移Hugo后写的第一篇博文
       </a>
     </h1>
@@ -143,7 +164,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/2017-10-07-post/" class="link black dim">
+      <a href="https://naxiro.com/posts/2017-10-07-post/" class="link black dim">
         在Visual Studio Code中设置Integrated Shell为msys2的bash
       </a>
     </h1>
@@ -159,7 +180,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="link black dim">
+      <a href="https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="link black dim">
         爆发
       </a>
     </h1>
@@ -176,7 +197,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
-      <a href="/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="link black dim">
+      <a href="https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="link black dim">
         kde5中Konsole中文字体被截断的临时解决方法
       </a>
     </h1>
@@ -201,9 +222,12 @@ Font=WenQuanYi Micro Hei Mono,13,-1,0,50,0,0,0,0,0  问题解决，如图所示
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://naxiro.com" >
-    &copy; 2020 七上八下
+    &copy;  七上八下 2020 
   </a>
     <div>
+
+
+
 
 
 

@@ -4,12 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>七上八下  | 系统时间错误造成Clash代理无法上网</title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
+    <title>系统时间错误造成Clash代理无法上网 | 七上八下</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.67.0" />
+    <meta name="generator" content="Hugo 0.69.2" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -17,7 +14,7 @@
 
     
     
-      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
     
 
     
@@ -27,7 +24,7 @@
     
 
     
-
+    
     <meta property="og:title" content="系统时间错误造成Clash代理无法上网" />
 <meta property="og:description" content="最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志， 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码ERR_CONNECTION_ERROR。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。
 正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。 接着又突然想起在某个地方偶然见过到时间造成V2Ray错误的网页，赶紧同步时间后试试，Clash终于正常了！ 随后启动到Windows，Windows时间肯定又出错了，打开Clash，果然Clash在Windows下也出现了ERR_CONNECTION_ERROR错误。
@@ -102,6 +99,9 @@ timedatectl set-local-rtc 0 --adjust-system-clock "/>
 
 
 
+
+
+
     </div>
   </div>
 </nav>
@@ -115,20 +115,49 @@ timedatectl set-local-rtc 0 --adjust-system-clock "/>
       
   
   <article class="flex-l flex-wrap justify-between mw8 center ph3">
-
     <header class="mt4 w-100">
-      <p class="f6 b helvetica tracked">
+      <aside class="instapaper_ignoref b helvetica tracked">
           
         POSTS
-      </p>
-      <h1 class="f1 athelas mb1">系统时间错误造成Clash代理无法上网</h1>
+      </aside>
       
-      <time class="f6 mv4 dib tracked" datetime="2020-03-15T20:40:42&#43;08:00">March 15, 2020</time>      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://naxiro.com/posts/clash-time-error/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://naxiro.com/posts/clash-time-error/&amp;text=%e7%b3%bb%e7%bb%9f%e6%97%b6%e9%97%b4%e9%94%99%e8%af%af%e9%80%a0%e6%88%90Clash%e4%bb%a3%e7%90%86%e6%97%a0%e6%b3%95%e4%b8%8a%e7%bd%91" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://naxiro.com/posts/clash-time-error/&amp;title=%e7%b3%bb%e7%bb%9f%e6%97%b6%e9%97%b4%e9%94%99%e8%af%af%e9%80%a0%e6%88%90Clash%e4%bb%a3%e7%90%86%e6%97%a0%e6%b3%95%e4%b8%8a%e7%bd%91" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+      <h1 class="f1 athelas mt3 mb1">系统时间错误造成Clash代理无法上网</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-03-15T20:40:42&#43;08:00">March 15, 2020</time>
+
       
       
     </header>
-
-    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p>最近由Shadowsocks迁移到了Clash，使用V2Ray的VMess协议翻墙。在Windows中一切都很顺利，感觉比Shadowsocks要稳定多了（可能是心理作用）。由于Windows 10中的WSL非常好用，我已经很久没有进到我的Manjaro Linux系统了，所以一直也没能在Linux下测试一下Clash。
 今天终于有机会进入Manjaro中，首先第一件事就是下载了Clash for linux以后翻墙。没想到的是Clash在Linux下不能正常工作。经过一番搜索和折腾，使用不同的版本，尝试各种配置，却发现怎么也翻不了墙。最后以为是节点挂了，然后查看日志，
 发现代理都正常工作，但是用Chrome浏览器访问总是错误，错误代码<code>ERR_CONNECTION_ERROR</code>。随后又启动到Windows，发现相同节点在Clash for windows下是正常的。</p>
 <p>正在我百思不得其解时，突然发现Manjaro的系统时间是错的。常装Windows和Linux双系统的同志们知道这是个常见问题，原因是Windows的系统时间采用本地时间，而Linux的系统时间采用UTC时间，所以双系统情况下系统时间经常会出现错误。
@@ -143,10 +172,11 @@ timedatectl set-local-rtc 0 --adjust-system-clock "/>
 </code></pre></div><ul class="pa0">
   
 </ul>
-<div class="mt6">
-        
+<div class="mt6 instapaper_ignoref">
+      
+      
       </div>
-    </section>
+    </div>
 
     <aside class="w-30-l mt6-l">
 
@@ -161,9 +191,12 @@ timedatectl set-local-rtc 0 --adjust-system-clock "/>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://naxiro.com" >
-    &copy; 2020 七上八下
+    &copy;  七上八下 2020 
   </a>
     <div>
+
+
+
 
 
 

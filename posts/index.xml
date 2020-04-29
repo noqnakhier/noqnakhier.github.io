@@ -6,10 +6,23 @@
     <description>Recent content in Posts on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2020 20:40:42 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Apr 2020 22:27:08 +0800</lastBuildDate>
     
 	<atom:link href="https://naxiro.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Archlinux下RPG Maker MV游戏错误解决方法</title>
+      <link>https://naxiro.com/posts/rpgmaker_mv_error/</link>
+      <pubDate>Wed, 29 Apr 2020 22:27:08 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/rpgmaker_mv_error/</guid>
+      <description>我偶尔会玩一些小游戏，有一些小游戏是用RPG Maker MV制作的。最近我切回Archlinux，本来RPG Maker MV制作的游戏通常都会有Linux的原生版本，但是今天在Linux下，发现无法启动, 报了fontconfig一堆错误，最后报：Check failed: InitDefaultFont(). Could not find the default font，然后就core dumped。
+我估计是archlinux的fontconfig版本太新的原因，但是又懒得找到其他发行版的机器试试了。看着游戏目录里那一堆文件，原来是nwjs制作的，索性到nwjs去下载了预编译的最新版本，然后将其解压并覆盖了游戏目录。接着启动一试，成功启动游戏。
+但是游戏开头过后，黑屏错误，这时发现终端里报错ffmpeg无法解码流，这时上网查了查资料，原来官方编译的版本中的libffmpeg.so不带一些私有的解码器，而我这个游戏中的视频应该用到了私有编解码，再具体查看是VP9,所以上网想自己编译一个libffmpeg.so。再一查，编译这玩意儿要下载1个多G的文件，且不知道要编译多久。继续Google, 原来网上有热心网友一直在提供这个含私有解码器的libffmpeg.so, 具体链接在iteufel/nwjs-ffmpeg-prebuilt。下载与nwjs相对应的版本后，解压到游戏目录下lib覆盖即可。
+解决方法总结：  下载预编译好的nwjs, 点此下载 到iteufel/nwjs-ffmpeg-prebuilt下载对应版本的libffmpeg.so文件放入游戏目录下的lib文件中。   注意：不一定要选择最新的版本，我试了几个版本都没有成功，最后选择了nwjs-ffmpeg-prebuilt中标记为Stable的版本后才成功
+ </description>
+    </item>
     
     <item>
       <title>系统时间错误造成Clash代理无法上网</title>

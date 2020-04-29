@@ -4,12 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>七上八下 </title>
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="320">
-
+    <title>七上八下</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="generator" content="Hugo 0.67.0" />
+    <meta name="generator" content="Hugo 0.69.2" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -17,7 +14,7 @@
 
     
     
-      <link href="/dist/css/app.955516233bcafa4d2a1c13cea63c7b50.css" rel="stylesheet">
+      <link href="/dist/css/app.1cb140d8ba31d5b2f1114537dd04802a.css" rel="stylesheet">
     
 
     
@@ -27,15 +24,17 @@
     
 
     
-      <link href="https://naxiro.com/index.xml" rel="alternate" type="application/rss+xml" title="七上八下" />
-      <link href="https://naxiro.com/index.xml" rel="feed" type="application/rss+xml" title="七上八下" />
     
-
+      <link href="/index.xml" rel="alternate" type="application/rss+xml" title="七上八下" />
+      <link href="/index.xml" rel="feed" type="application/rss+xml" title="七上八下" />
+      
+    
+    
     <meta property="og:title" content="七上八下" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://naxiro.com/" />
-<meta property="og:updated_time" content="2020-03-15T20:40:42+08:00" />
+<meta property="og:updated_time" content="2020-04-29T22:27:08+08:00" />
 <meta itemprop="name" content="七上八下">
 <meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="七上八下"/>
@@ -69,6 +68,9 @@
         </ul>
       
       
+
+
+
 
 
 
@@ -130,7 +132,35 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/clash-time-error/" class="color-inherit dim link">
+          <a href="https://naxiro.com/posts/rpgmaker_mv_error/" class="color-inherit dim link">
+            Archlinux下RPG Maker MV游戏错误解决方法
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          我偶尔会玩一些小游戏，有一些小游戏是用RPG Maker MV制作的。最近我切回Archlinux，本来RPG Maker MV制作的游戏通常都会有Linux的原生版本，但是今天在Linux下，发现无法启动, 报了fontconfig一堆错误，最后报：Check failed: InitDefaultFont(). Could not find the default font，然后就core dumped。
+我估计是archlinux的fontconfig版本太新的原因，但是又懒得找到其他发行版的机器试试了。看着游戏目录里那一堆文件，原来是nwjs制作的，索性到nwjs去下载了预编译的最新版本，然后将其解压并覆盖了游戏目录。接着启动一试，成功启动游戏。
+但是游戏开头过后，黑屏错误，这时发现终端里报错ffmpeg无法解码流，这时上网查了查资料，原来官方编译的版本中的libffmpeg.so不带一些私有的解码器，而我这个游戏中的视频应该用到了私有编解码，再具体查看是VP9,所以上网想自己编译一个libffmpeg.so。再一查，编译这玩意儿要下载1个多G的文件，且不知道要编译多久。继续Google, 原来网上有热心网友一直在提供这个含私有解码器的libffmpeg.so, 具体链接在iteufel/nwjs-ffmpeg-prebuilt。下载与nwjs相对应的版本后，解压到游戏目录下lib覆盖即可。
+解决方法总结：  下载预编译好的nwjs, 点此下载 到iteufel/nwjs-ffmpeg-prebuilt下载对应版本的libffmpeg.so文件放入游戏目录下的lib文件中。   注意：不一定要选择最新的版本，我试了几个版本都没有成功，最后选择了nwjs-ffmpeg-prebuilt中标记为Stable的版本后才成功
+ 
+        </div>
+          <a href="https://naxiro.com/posts/rpgmaker_mv_error/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="https://naxiro.com/posts/clash-time-error/" class="color-inherit dim link">
             系统时间错误造成Clash代理无法上网
             </a>
         </h1>
@@ -142,7 +172,7 @@ Linux设置系统时间为本地时间方法 将Linux系统时间设置为本地
 timedatectl set-local-rtc 1 --adjust-system-clock 使用下列命令可以恢复UTC时间
 timedatectl set-local-rtc 0 --adjust-system-clock 
         </div>
-          <a href="/posts/clash-time-error/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="https://naxiro.com/posts/clash-time-error/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -159,7 +189,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/my-first-post-in-hugo/" class="color-inherit dim link">
+          <a href="https://naxiro.com/posts/my-first-post-in-hugo/" class="color-inherit dim link">
             迁移Hugo后写的第一篇博文
             </a>
         </h1>
@@ -170,32 +200,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
  Hello, world! 你好，世界！
  
         </div>
-          <a href="/posts/my-first-post-in-hugo/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/2017-10-07-post/" class="color-inherit dim link">
-            在Visual Studio Code中设置Integrated Shell为msys2的bash
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          最近一段时间都在使用Visual Studio Code作为主力编辑器，不得不说这款编辑器实在是好用，我完全放弃了Atom。在Windows下，Visual Studio Code的默认终端是Powershell，现在需要改为比较顺手的msys2中的bash，在Visual Studio Code中的用户设置中添加以下代码：
-&#34;terminal.integrated.shell.windows&#34;: &#34;/path/to/bash&#34;, &#34;terminal.integrated.shellArgs.windows&#34;: [ &#34;--login&#34;, &#34;-i&#34; ] &#34;terminal.integrated.env.windows&#34;: { &#34;CHERE_INVOKING&#34;: 1, &#34;MSYSTEM&#34;: &#34;MINGW64&#34; } 前面两个设置很好理解，最后设置的terminal.integrated.env.windows的两个环境变量非常重要，其中CHERE_INVOKING的作用是打开终端的默认工作路径为当前编辑文件所在路径，MSYSTEM主要是指msys2采用64位的环境。
-        </div>
-          <a href="/posts/2017-10-07-post/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+          <a href="https://naxiro.com/posts/my-first-post-in-hugo/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
         
       </div>
     </div>
@@ -212,13 +217,19 @@ timedatectl set-local-rtc 0 --adjust-system-clock
         
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="link black dim">
+            <a href="https://naxiro.com/posts/2017-10-07-post/" class="link black dim">
+              在Visual Studio Code中设置Integrated Shell为msys2的bash
+            </a>
+          </h2>
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/" class="link black dim">
               爆发
             </a>
           </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="link black dim">
+            <a href="https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/" class="link black dim">
               kde5中Konsole中文字体被截断的临时解决方法
             </a>
           </h2>
@@ -226,7 +237,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 
         
         
-          <a href="/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc"></a>
+          <a href="https://naxiro.com/posts/" class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc"></a>
         
         </section>
       
@@ -238,9 +249,12 @@ timedatectl set-local-rtc 0 --adjust-system-clock
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://naxiro.com" >
-    &copy; 2020 七上八下
+    &copy;  七上八下 2020 
   </a>
     <div>
+
+
+
 
 
 
