@@ -9,7 +9,7 @@
     <meta name="generator" content="Hugo 0.69.2" />
     
     
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
     
 
     
@@ -46,9 +46,22 @@
 <meta name="twitter:description" content="最近一段时间都在使用Visual Studio Code作为主力编辑器，不得不说这款编辑器实在是好用，我完全放弃了Atom。在Windows下，Visual Studio Code的默认终端是Powershell，现在需要改为比较顺手的msys2中的bash，在Visual Studio Code中的用户设置中添加以下代码：
 &#34;terminal.integrated.shell.windows&#34;: &#34;/path/to/bash&#34;, &#34;terminal.integrated.shellArgs.windows&#34;: [ &#34;--login&#34;, &#34;-i&#34; ] &#34;terminal.integrated.env.windows&#34;: { &#34;CHERE_INVOKING&#34;: 1, &#34;MSYSTEM&#34;: &#34;MINGW64&#34; } 前面两个设置很好理解，最后设置的terminal.integrated.env.windows的两个环境变量非常重要，其中CHERE_INVOKING的作用是打开终端的默认工作路径为当前编辑文件所在路径，MSYSTEM主要是指msys2采用64位的环境。"/>
 
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-160830741-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    
   </head>
 
-  <body class="ma0 avenir bg-near-white">
+  <body class="ma0 avenir bg-near-white production">
 
     
    
