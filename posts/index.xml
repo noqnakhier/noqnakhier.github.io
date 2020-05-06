@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright>
-    <lastBuildDate>Wed, 29 Apr 2020 22:27:08 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2020 10:15:35 +0800</lastBuildDate>
     
 	<atom:link href="https://naxiro.com/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Archlinux下bspwm桌面配置（一）</title>
+      <link>https://naxiro.com/posts/archlinux_bspwm/</link>
+      <pubDate>Thu, 30 Apr 2020 10:15:35 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/archlinux_bspwm/</guid>
+      <description>bspwm安装和设置 sudo pacman -S bspwm sxhkd 安装完成后需要在$HOME/.xinitrc中添加exec bspwm，然后通过startx即可启动。如果需要登录自动启动bspwm，可以安装启动器（如lightdm)。 本人比较喜欢使用startx这种简单的方式。如果不想装启动器，又还是想用户登录后自动启动bspwm的话，也可以在$HOME/.zprofile中添加如下代码：
+if systemctl -q is-active graphical.target &amp;amp;&amp;amp; [[ ! $DISPLAY &amp;amp;&amp;amp; $XDG_VTNR -eq 1 ]]; then exec startx fi HiDPI注意事项 个人显示器是4k屏，所以需要进行额外的设置，在$HOME/.Xresources中贴下如下代码:
+# 关闭自动hint Xft.autohint: 0 Xft.lcdfilter: lcddefault # 看个人喜好，如果是1080(含)以下屏幕， # 建议改为hintslight或者hintnone, # 这样不会出现歪歪扭扭的字，但是字体 # 会显得稍有些模糊。 Xft.hintstyle: hintfull # 开启字体自带的hinting Xft.hinting: 1 # 开启反锯齿 Xft.antialias: 1 Xft.rgba: rgb # 1080以下不用设置，默认是96，推荐设置： # 150% - 144 # 175% - 168 # 200% - 192 Xft.dpi: 168 贴上以上代码后，需要将此文件merge到xinitrc中，键入命令</description>
+    </item>
     
     <item>
       <title>Archlinux下RPG Maker MV游戏错误解决方法</title>
