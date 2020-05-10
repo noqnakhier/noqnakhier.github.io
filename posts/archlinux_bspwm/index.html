@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>Archlinux下bspwm桌面配置（一）</title>
-  <meta property="og:title" content="Archlinux下bspwm桌面配置（一）" />
-  <meta name="twitter:title" content="Archlinux下bspwm桌面配置（一）" />
+  <title>Archlinux下bspwm桌面配置</title>
+  <meta property="og:title" content="Archlinux下bspwm桌面配置" />
+  <meta name="twitter:title" content="Archlinux下bspwm桌面配置" />
   
 
   
@@ -29,7 +29,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.69.2" />
+  <meta name="generator" content="Hugo 0.70.0" />
   
   
   
@@ -60,7 +60,7 @@
 
 <article class="p-article">
   <header>
-    <h1>Archlinux下bspwm桌面配置（一）</h1>
+    <h1>Archlinux下bspwm桌面配置</h1>
     <div>
       <div class="c-time">
         Posted on
@@ -184,6 +184,11 @@ bspc rule -a <span style="color:#e6db74">&#34;VirtualBox Machine&#34;</span> sta
 
 </code></pre></div><p>主题可从<a href="https://github.com/alacritty/alacritty/wiki/Color-schemes">Alacritty Wiki</a>中找到，粘贴过来即可</p>
 <h2 id="文件管理-ranger">文件管理 ranger</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-zsh" data-lang="zsh">sudo pacman -S ranger
+</code></pre></div><p>ranger是一个用于文件浏览与管理的CLI程序，非常适合在tiling window manager下使用。ranger是用python写的，如果介意，也可以使用golang写的lf。
+ranger基本操作和vim相同，<code>j, k</code>用来上下选择文件，<code>h, l</code>用来进上上级目录和子目录，如果是文件<code>l, ENTER</code>会打开文件或者执行文件。打开文件使用
+的是<code>rfile</code>，而不使用系统的MIME信息。
+ranger的配置文件位于<code>$HOME/.config/ranger</code>，具体配置方法可以查看manpage, 就我来说，默认配置就已经完全满足要求了。</p>
 <h2 id="图片浏览与壁纸设置">图片浏览与壁纸设置</h2>
 <p>图像浏览软件使用<code>feh</code>和<code>sxiv</code>, 其中<code>feh</code>用于设置壁纸，<code>sxiv</code>用于浏览图片和操作图片。要提一下的是，<code>feh</code>也可以用于图片的浏览，但是貌似不支持快捷键对图片进行文件操作，所以还是多装了<code>sxiv</code>用于图片的浏览和简单操作。</p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    sudo pacman -S feh sxiv
