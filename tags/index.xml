@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright>
-    <lastBuildDate>Thu, 30 Apr 2020 10:15:35 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 10 May 2020 17:03:45 +0800</lastBuildDate>
     
 	<atom:link href="https://naxiro.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,9 +15,27 @@
     <item>
       <title>linux</title>
       <link>https://naxiro.com/tags/linux/</link>
-      <pubDate>Thu, 30 Apr 2020 10:15:35 +0800</pubDate>
+      <pubDate>Sun, 10 May 2020 17:03:45 +0800</pubDate>
       
       <guid>https://naxiro.com/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>partition</title>
+      <link>https://naxiro.com/tags/partition/</link>
+      <pubDate>Sun, 10 May 2020 17:03:45 +0800</pubDate>
+      
+      <guid>https://naxiro.com/tags/partition/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>root</title>
+      <link>https://naxiro.com/tags/root/</link>
+      <pubDate>Sun, 10 May 2020 17:03:45 +0800</pubDate>
+      
+      <guid>https://naxiro.com/tags/root/</guid>
       <description></description>
     </item>
     

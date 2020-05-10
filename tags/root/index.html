@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>linux</title>
-  <meta property="og:title" content="linux" />
-  <meta name="twitter:title" content="linux" />
+  <title>root</title>
+  <meta property="og:title" content="root" />
+  <meta name="twitter:title" content="root" />
   
 
   
@@ -17,7 +17,7 @@
 
   <meta name="author" content="noqnakhier"/>
   <meta property="og:site_name" content="七上八下" />
-  <meta property="og:url" content="https://naxiro.com/tags/linux/" />
+  <meta property="og:url" content="https://naxiro.com/tags/root/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -56,7 +56,7 @@
   </header>
   <main id="main" class="l-main">
 
-<h2 class="c-title p-tag-title">linux</h2>
+<h2 class="c-title p-tag-title">root</h2>
 
 
 
@@ -80,54 +80,6 @@
   </div>
   
   <a href="https://naxiro.com/posts/archlinux_move_root_partition/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://naxiro.com/posts/archlinux_bspwm/">Archlinux下bspwm桌面配置</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2020-04-30T10:15:35&#43;08:00">
-        Apr 30, 2020
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    bspwm安装和设置 sudo pacman -S bspwm sxhkd 安装完成后需要在$HOME/.xinitrc中添加exec bspwm，然后通过startx即可启动。如果需要登录自动启动bspwm，可以安装启动器（如lightdm)。 本人比较喜欢使用startx这种简单的方式。如果不想装启动器，又还是想用户登录后自动启动bspwm的话，也可以在$HOME/.zprofile中添加如下代码：
-if systemctl -q is-active graphical.target &amp;&amp; [[ ! $DISPLAY &amp;&amp; $XDG_VTNR -eq 1 ]]; then exec startx fi HiDPI注意事项 个人显示器是4k屏，所以需要进行额外的设置，在$HOME/.Xresources中贴下如下代码:
-# 关闭自动hint Xft.autohint: 0 Xft.lcdfilter: lcddefault # 看个人喜好，如果是1080(含)以下屏幕， # 建议改为hintslight或者hintnone, # 这样不会出现歪歪扭扭的字，但是字体 # 会显得稍有些模糊。 Xft.hintstyle: hintfull # 开启字体自带的hinting Xft.hinting: 1 # 开启反锯齿 Xft.antialias: 1 Xft.rgba: rgb # 1080以下不用设置，默认是96，推荐设置： # 150% - 144 # 175% - 168 # 200% - 192 Xft.dpi: 168 贴上以上代码后，需要将此文件merge到xinitrc中，键入命令
-  </div>
-  
-  <a href="https://naxiro.com/posts/archlinux_bspwm/" class="c-article__btn p-list-article__btn">Read more</a>
-  
-</article>
-
-
-
-
-<article class="c-article p-list-article">
-  <header>
-    <h2 class="c-title c-article__title"><a href="https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">kde5中Konsole中文字体被截断的临时解决方法</a></h2>
-    <p class="c-article__meta">
-      Posted on
-      <time datetime="2017-01-16T21:37:48&#43;08:00">
-        Jan 16, 2017
-      </time>
-    </p>
-  </header>
-  <div class="c-article__summary">
-    当前系统的主要版本为：
- Ubuntu: 16.04 Konsole: 16.04.3 KDE框架: 5.28.0  Konsole中的中文字体下半身被完全截断，如图所示。
-在网络上搜索了一下发现可能是中文字体的基线没有和英文字体的基线对齐造成的。所以直接将Konsole的字体设置成中文字体应该可以解决。但是发现Konsole的选择字体列表中并没有任何的中文字体……最后还是直接修改konsole的配置文件。google了一番，最后才发现配置文件被移到了：~/.local/share/apps/konsole/xxx.profile。其中&quot;xxx&quot;指的是Profile的名称。
-打开此配置文件，将[Appearance]下的
-Font=FreeMono,13,-1,0,50,0,0,0,0,0  修改成任意一款中文字体，比如我选择的是文泉驿等宽微米黑
-Font=WenQuanYi Micro Hei Mono,13,-1,0,50,0,0,0,0,0  问题解决，如图所示
-今天在此处看到这个Bug居然在13年就有人提出了，到现在17年1月了还没有修复，看来是需要考虑离开KDE了。
-  </div>
   
 </article>
 
