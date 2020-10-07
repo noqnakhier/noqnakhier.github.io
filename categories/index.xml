@@ -5,11 +5,7 @@
     <link>https://naxiro.com/categories/</link>
     <description>Recent content in Categories on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
-    <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright>
-    
-	<atom:link href="https://naxiro.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright><atom:link href="https://naxiro.com/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

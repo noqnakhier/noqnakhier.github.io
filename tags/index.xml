@@ -5,17 +5,13 @@
     <link>https://naxiro.com/tags/</link>
     <description>Recent content in Tags on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright>
-    <lastBuildDate>Sun, 10 May 2020 17:03:45 +0800</lastBuildDate>
-    
-	<atom:link href="https://naxiro.com/tags/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 10 May 2020 12:00:05 +0800</lastBuildDate><atom:link href="https://naxiro.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>linux</title>
       <link>https://naxiro.com/tags/linux/</link>
-      <pubDate>Sun, 10 May 2020 17:03:45 +0800</pubDate>
+      <pubDate>Sun, 10 May 2020 12:00:05 +0800</pubDate>
       
       <guid>https://naxiro.com/tags/linux/</guid>
       <description></description>
@@ -24,7 +20,7 @@
     <item>
       <title>partition</title>
       <link>https://naxiro.com/tags/partition/</link>
-      <pubDate>Sun, 10 May 2020 17:03:45 +0800</pubDate>
+      <pubDate>Sun, 10 May 2020 12:00:05 +0800</pubDate>
       
       <guid>https://naxiro.com/tags/partition/</guid>
       <description></description>
@@ -33,18 +29,9 @@
     <item>
       <title>root</title>
       <link>https://naxiro.com/tags/root/</link>
-      <pubDate>Sun, 10 May 2020 17:03:45 +0800</pubDate>
+      <pubDate>Sun, 10 May 2020 12:00:05 +0800</pubDate>
       
       <guid>https://naxiro.com/tags/root/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tiling window manager</title>
-      <link>https://naxiro.com/tags/tiling-window-manager/</link>
-      <pubDate>Thu, 30 Apr 2020 10:15:35 +0800</pubDate>
-      
-      <guid>https://naxiro.com/tags/tiling-window-manager/</guid>
       <description></description>
     </item>
     
@@ -63,6 +50,15 @@
       <pubDate>Sat, 07 Oct 2017 23:23:07 +0800</pubDate>
       
       <guid>https://naxiro.com/tags/editor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>life</title>
+      <link>https://naxiro.com/tags/life/</link>
+      <pubDate>Sat, 21 Jan 2017 00:29:43 +0800</pubDate>
+      
+      <guid>https://naxiro.com/tags/life/</guid>
       <description></description>
     </item>
     

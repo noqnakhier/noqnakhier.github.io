@@ -5,13 +5,9 @@
     <link>https://naxiro.com/tags/bash/</link>
     <description>Recent content in bash on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright>
-    <lastBuildDate>Sat, 07 Oct 2017 23:23:07 +0800</lastBuildDate>
-    
-	<atom:link href="https://naxiro.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 07 Oct 2017 23:23:07 +0800</lastBuildDate><atom:link href="https://naxiro.com/tags/bash/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在Visual Studio Code中设置Integrated Shell为msys2的bash</title>
       <link>https://naxiro.com/posts/2017-10-07-post/</link>

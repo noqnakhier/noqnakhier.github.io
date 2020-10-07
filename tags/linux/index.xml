@@ -5,35 +5,21 @@
     <link>https://naxiro.com/tags/linux/</link>
     <description>Recent content in linux on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-cn</language>
+    <language>en-us</language>
     <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright>
-    <lastBuildDate>Sun, 10 May 2020 17:03:45 +0800</lastBuildDate>
-    
-	<atom:link href="https://naxiro.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 10 May 2020 12:00:05 +0800</lastBuildDate><atom:link href="https://naxiro.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Archlinux Root根目录硬盘迁移</title>
       <link>https://naxiro.com/posts/archlinux_move_root_partition/</link>
-      <pubDate>Sun, 10 May 2020 17:03:45 +0800</pubDate>
+      <pubDate>Sun, 10 May 2020 12:00:05 +0800</pubDate>
       
       <guid>https://naxiro.com/posts/archlinux_move_root_partition/</guid>
-      <description>原来做双系统把Archlinux安装到了普通机械硬盘上，最近感觉实在太慢受不了，就买了一块500GB的SSD，准备把当前系统迁移过来。 电脑主板上只有一个m.2接口，已经插了一块256G的，上面装了Windows。NVME协议的一般都在1000MB/s以上，有的甚至能到3000MB/s(三星的那款，好贵)，而SATA协议的SSD读写速度最高也就只到500MB/s左右，觉得没有多大意义。上网一搜，发现有NVME转PCIE的转接卡，立马下单。
-新盘安装好，但是不想重装系统，就想办法把根目录迁移过来吧。原来的硬盘分区和挂载情况是这样的：
-   设备 挂载点 大小     /dev/nvme0n1p1 /efi 500MB   /dev/sdb5 / 120GB   /dev/sdb3 /home 250GB   /dev/sdb4 swap 16G    新盘的方案为：
-   设备 挂载点 大小     /dev/nvme0n1p1 /efi 500MB   /dev/nvme1n1p3 / 剩余大小   /dev/nvme1n1p1 /home 300GB   /dev/nvme1n1p2 swap 16G    接下来就开始正式的迁移步骤，用archlinux的安装USB Stick启动系统，进入安装模式:
- 首先将原来的系统盘全部挂载到目录/oldRoot/中：  mkdir -p /oldRoot mount /dev/sdb5/ /oldRoot mount /dev/sdb3 /oldRoot/home 用cfdisk为新盘分区，选择gpt分区表。分区完后格式化，并且挂载到/mnt上:  mount /dev/nvme1n1p3/ /mnt # 这里一定要注意挂载顺序 mkdir -p /mnt/home mount /dev/nvme1n1p1/ /mnt/home #激活swap分区 swapon /dev/nvme1n1p2 新旧系统盘挂载后，下面要开始迁移了，别弄反了，我们需要从/oldRoot迁移到/mnt中去：  # -a 选项表明复制所有内容，包含子文件夹，链接等 # -f 默认强制覆盖已存在文件 # -v 显示复制文件，如果不想查看满屏刷文件，可以不加 # 一定要注意末尾的*号，没这*号，新盘中就是一个文件夹…… cp -afv /oldRoot/* /mnt 挂载efi分区和其他分区(如果还有其他数据盘的话)到新系统中，一会儿安装启动器需要使用:  # 这里不用新建efi文件夹了，因为原来根目录中我们没有挂载EFI分区， # 所以复制时不会有文件写入到此文件夹中，这时我们再把efi分区挂载过来, # 其他数据盘同理 mount /dev/nvme0n1p1 /mnt/efi 喝一杯咖啡，等待复制完成。接下来需要做一些小小的设置，主要是更改原系统中的硬盘挂载点和启动设置。</description>
-    </item>
-    
-    <item>
-      <title>Archlinux下bspwm桌面配置</title>
-      <link>https://naxiro.com/posts/archlinux_bspwm/</link>
-      <pubDate>Thu, 30 Apr 2020 10:15:35 +0800</pubDate>
-      
-      <guid>https://naxiro.com/posts/archlinux_bspwm/</guid>
-      <description>bspwm安装和设置 sudo pacman -S bspwm sxhkd 安装完成后需要在$HOME/.xinitrc中添加exec bspwm，然后通过startx即可启动。如果需要登录自动启动bspwm，可以安装启动器（如lightdm)。 本人比较喜欢使用startx这种简单的方式。如果不想装启动器，又还是想用户登录后自动启动bspwm的话，也可以在$HOME/.zprofile中添加如下代码：
-if systemctl -q is-active graphical.target &amp;amp;&amp;amp; [[ ! $DISPLAY &amp;amp;&amp;amp; $XDG_VTNR -eq 1 ]]; then exec startx fi HiDPI注意事项 个人显示器是4k屏，所以需要进行额外的设置，在$HOME/.Xresources中贴下如下代码:
-# 关闭自动hint Xft.autohint: 0 Xft.lcdfilter: lcddefault # 看个人喜好，如果是1080(含)以下屏幕， # 建议改为hintslight或者hintnone, # 这样不会出现歪歪扭扭的字，但是字体 # 会显得稍有些模糊。 Xft.hintstyle: hintfull # 开启字体自带的hinting Xft.hinting: 1 # 开启反锯齿 Xft.antialias: 1 Xft.rgba: rgb # 1080以下不用设置，默认是96，推荐设置： # 150% - 144 # 175% - 168 # 200% - 192 Xft.dpi: 168 贴上以上代码后，需要将此文件merge到xinitrc中，键入命令</description>
+      <description>原来安装双系统的时候，将Archlinux安装到了普通机械硬盘上。最近感觉实在太慢受不了，就买了一块500GB的SSD，准备把当前系统迁移过来。
+电脑的主板上只有一个m.2接口，目前已经插了一块256G的，上面装了Windows。NVME协议的一般都在1000MB/s以上，有的甚至能到3000MB/s(三星的那款，好贵)，而SATA协议的SSD读写速度最高也就只到500MB/s左右，觉得没有多大意义。上网一搜，发现有NVME转PCIE的转接卡，立马下单。
+新盘安装好，但是不想重装Archlinux系统，就只有想办法把根目录迁移过来吧。原来系统中硬盘分区和挂载情况是这样的：
+   设备 挂载点 大小     /dev/nvme0n1p1 /efi 500M   /dev/sdb5 / 120G   /dev/sdb3 /home 250G   /dev/sdb4 swap 16G    新盘的方案为：
+   设备 挂载点 大小     /dev/nvme0n1p1 /efi 500M   /dev/nvme1n1p3 / 剩余大小   /dev/nvme1n1p1 /home 300G   /dev/nvme1n1p2 swap 16G    确定方案后，接下来就开始正式的迁移步骤，用archlinux的安装USB Stick启动系统，进入安装模式:
+ 首先将原来的系统盘全部挂载到目录/oldRoot/中：  mkdir -p /oldRoot mount /dev/sdb5/ /oldRoot mount /dev/sdb3 /oldRoot/home 用cfdisk为新盘分区，选择gpt分区表。分区完后格式化，并且挂载到/mnt上:  mount /dev/nvme1n1p3/ /mnt # 这里一定要注意挂载顺序 mkdir -p /mnt/home mount /dev/nvme1n1p1/ /mnt/home # 激活swap分区 swapon /dev/nvme1n1p2 新旧系统盘挂载后，下面要开始迁移了，注意路径别弄反了，我们需要从/oldRoot迁移到/mnt中去：  # -a 选项表明复制所有内容，包含子文件夹，链接等 # -f 默认强制覆盖已存在文件 # -v 显示复制文件，如果不想查看满屏刷文件，可以不加 # 一定要注意末尾的*号，没这*号，新盘中就是一个文件夹…… cp -afv /oldRoot/* /mnt 好的，现在你可以稍微休息下。喝一杯咖啡，等待复制完成。接下来需要做一些小小的设置，主要是更改原系统中的硬盘挂载点和启动设置。</description>
     </item>
     
     <item>
