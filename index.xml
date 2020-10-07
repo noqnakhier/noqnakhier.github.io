@@ -6,10 +6,55 @@
     <description>Recent content on 七上八下</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 15 Mar 2020 20:40:42 +0800</lastBuildDate>
+    <copyright>&amp;copy; Copyright 2017-2020 noqnakhier</copyright>
+    <lastBuildDate>Sun, 10 May 2020 12:00:05 +0800</lastBuildDate><atom:link href="https://naxiro.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>关于我</title>
+      <link>https://naxiro.com/about/</link>
+      <pubDate>Wed, 07 Oct 2020 15:19:33 +0800</pubDate>
+      
+      <guid>https://naxiro.com/about/</guid>
+      <description>一个老土博。
+联系地址： noqnakheir AT gmail.com</description>
+    </item>
     
-	<atom:link href="https://naxiro.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Archlinux Root根目录硬盘迁移</title>
+      <link>https://naxiro.com/posts/archlinux_move_root_partition/</link>
+      <pubDate>Sun, 10 May 2020 12:00:05 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/archlinux_move_root_partition/</guid>
+      <description>原来安装双系统的时候，将Archlinux安装到了普通机械硬盘上。最近感觉实在太慢受不了，就买了一块500GB的SSD，准备把当前系统迁移过来。
+电脑的主板上只有一个m.2接口，目前已经插了一块256G的，上面装了Windows。NVME协议的一般都在1000MB/s以上，有的甚至能到3000MB/s(三星的那款，好贵)，而SATA协议的SSD读写速度最高也就只到500MB/s左右，觉得没有多大意义。上网一搜，发现有NVME转PCIE的转接卡，立马下单。
+新盘安装好，但是不想重装Archlinux系统，就只有想办法把根目录迁移过来吧。原来系统中硬盘分区和挂载情况是这样的：
+   设备 挂载点 大小     /dev/nvme0n1p1 /efi 500M   /dev/sdb5 / 120G   /dev/sdb3 /home 250G   /dev/sdb4 swap 16G    新盘的方案为：
+   设备 挂载点 大小     /dev/nvme0n1p1 /efi 500M   /dev/nvme1n1p3 / 剩余大小   /dev/nvme1n1p1 /home 300G   /dev/nvme1n1p2 swap 16G    确定方案后，接下来就开始正式的迁移步骤，用archlinux的安装USB Stick启动系统，进入安装模式:
+ 首先将原来的系统盘全部挂载到目录/oldRoot/中：  mkdir -p /oldRoot mount /dev/sdb5/ /oldRoot mount /dev/sdb3 /oldRoot/home 用cfdisk为新盘分区，选择gpt分区表。分区完后格式化，并且挂载到/mnt上:  mount /dev/nvme1n1p3/ /mnt # 这里一定要注意挂载顺序 mkdir -p /mnt/home mount /dev/nvme1n1p1/ /mnt/home # 激活swap分区 swapon /dev/nvme1n1p2 新旧系统盘挂载后，下面要开始迁移了，注意路径别弄反了，我们需要从/oldRoot迁移到/mnt中去：  # -a 选项表明复制所有内容，包含子文件夹，链接等 # -f 默认强制覆盖已存在文件 # -v 显示复制文件，如果不想查看满屏刷文件，可以不加 # 一定要注意末尾的*号，没这*号，新盘中就是一个文件夹…… cp -afv /oldRoot/* /mnt 好的，现在你可以稍微休息下。喝一杯咖啡，等待复制完成。接下来需要做一些小小的设置，主要是更改原系统中的硬盘挂载点和启动设置。</description>
+    </item>
     
+    <item>
+      <title>Archlinux下bspwm桌面配置</title>
+      <link>https://naxiro.com/posts/archlinux_bspwm/</link>
+      <pubDate>Thu, 30 Apr 2020 13:34:05 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/archlinux_bspwm/</guid>
+      <description>bspwm安装和设置 sudo pacman -S bspwm sxhkd 安装完成后需要在$HOME/.xinitrc中添加exec bspwm，然后通过startx即可启动。如果需要登录自动启动bspwm，可以安装启动器（如lightdm)。 本人比较喜欢使用startx这种简单的方式。如果不想装启动器，又还是想用户登录后自动启动bspwm的话，也可以在$HOME/.zprofile中添加如下代码：
+if systemctl -q is-active graphical.target &amp;amp;&amp;amp; [[ ! $DISPLAY &amp;amp;&amp;amp; $XDG_VTNR -eq 1 ]]; then exec startx fi HiDPI注意事项 个人显示器是4k屏，所以需要进行额外的设置，在$HOME/.Xresources中贴下如下代码:
+Xft.autohint: 0 Xft.lcdfilter: lcddefault # 看个人喜好，如果是1080(含)以下屏幕， # 建议改为hintslight或者hintnone, # 这样不会出现歪歪扭扭的字，但是字体 # 会显得稍有些模糊。 Xft.hintstyle: hintfull # 开启字体自带的hinting Xft.hinting: 1 # 开启反锯齿 Xft.antialias: 1 Xft.rgba: rgb # 1080以下不用设置，默认是96，推荐设置： # 150% - 144 # 175% - 168 # 200% - 192 Xft.dpi: 168 经过上述的设置后，需要将.Xresources文件通过以下命令merge到xinitrc中才能生效：</description>
+    </item>
+    
+    <item>
+      <title>Archlinux下RPG Maker MV游戏错误解决方法</title>
+      <link>https://naxiro.com/posts/rpgmaker_mv_error/</link>
+      <pubDate>Wed, 29 Apr 2020 22:27:08 +0800</pubDate>
+      
+      <guid>https://naxiro.com/posts/rpgmaker_mv_error/</guid>
+      <description>我偶尔会玩一些小游戏，有一些小游戏是用RPG Maker MV制作的。最近我切回Archlinux，本来RPG Maker MV制作的游戏通常都会有Linux的原生版本，但是今天在Linux下，发现无法启动, 报了fontconfig一堆错误，最后报：Check failed: InitDefaultFont(). Could not find the default font，然后就core dumped。
+我估计是archlinux的fontconfig版本太新的原因，但是又懒得找到其他发行版的机器试试了。看着游戏目录里那一堆文件，原来是nwjs制作的，索性到nwjs去下载了预编译的最新版本，然后将其解压并覆盖了游戏目录。接着启动一试，成功启动游戏。
+但是游戏开头过后，黑屏错误，这时发现终端里报错ffmpeg无法解码流，这时上网查了查资料，原来官方编译的版本中的libffmpeg.so不带一些私有的解码器，而我这个游戏中的视频应该用到了私有编解码，再具体查看是VP9,所以上网想自己编译一个libffmpeg.so。再一查，编译这玩意儿要下载1个多G的文件，且不知道要编译多久。继续Google, 原来网上有热心网友一直在提供这个含私有解码器的libffmpeg.so, 具体链接在iteufel/nwjs-ffmpeg-prebuilt。下载与nwjs相对应的版本后，解压到游戏目录下lib覆盖即可。
+解决方法总结：  下载预编译好的nwjs, 点此下载 到iteufel/nwjs-ffmpeg-prebuilt下载对应版本的libffmpeg.so文件放入游戏目录下的lib文件中。   注意：不一定要选择最新的版本，我试了几个版本都没有成功，最后选择了nwjs-ffmpeg-prebuilt中标记为Stable的版本后才成功
+ </description>
+    </item>
     
     <item>
       <title>系统时间错误造成Clash代理无法上网</title>
