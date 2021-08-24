@@ -94,17 +94,6 @@ timedatectl set-local-rtc 0 --adjust-system-clock </description>
     </item>
     
     <item>
-      <title>爆发</title>
-      <link>https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/</link>
-      <pubDate>Sat, 21 Jan 2017 00:29:43 +0800</pubDate>
-      
-      <guid>https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/</guid>
-      <description>咚 咚 孩子停止了吵闹 我的内心 到底是哭是笑
-最后的结果 就是那样 看吧看吧 谁能比谁更烂
-哈哈哈 闹太套</description>
-    </item>
-    
-    <item>
       <title>kde5中Konsole中文字体被截断的临时解决方法</title>
       <link>https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
       <pubDate>Mon, 16 Jan 2017 21:37:48 +0800</pubDate>

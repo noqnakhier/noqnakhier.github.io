@@ -29,7 +29,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.75.1" />
+  <meta name="generator" content="Hugo 0.87.0" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -50,9 +50,6 @@ if (!doNotTrack) {
   
   <script type="text/javascript" src="https://naxiro.com/js/bundle.js"></script>
   
-<link rel="stylesheet" href="/sharejs/css/share.min.css"/>
-<script src="/sharejs/js/social-share.min.js"></script>
-
 
 </head>
 
@@ -92,10 +89,10 @@ if (!doNotTrack) {
   
   <section id="js-article" class="p-article__body">
     <h2 id="bspwm安装和设置">bspwm安装和设置</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S bspwm sxhkd
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S bspwm sxhkd
 </code></pre></div><p>安装完成后需要在<code>$HOME/.xinitrc</code>中添加<code>exec bspwm</code>，然后通过<code>startx</code>即可启动。如果需要登录自动启动<code>bspwm</code>，可以安装启动器（如<code>lightdm</code>)。
 本人比较喜欢使用<code>startx</code>这种简单的方式。如果不想装启动器，又还是想用户登录后自动启动<code>bspwm</code>的话，也可以在<code>$HOME/.zprofile</code>中添加如下代码：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">if</span> systemctl -q is-active graphical.target <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[[</span> ! $DISPLAY <span style="color:#f92672">&amp;&amp;</span> $XDG_VTNR -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#66d9ef">if</span> systemctl -q is-active graphical.target <span style="color:#f92672">&amp;&amp;</span> <span style="color:#f92672">[[</span> ! $DISPLAY <span style="color:#f92672">&amp;&amp;</span> $XDG_VTNR -eq <span style="color:#ae81ff">1</span> <span style="color:#f92672">]]</span>; <span style="color:#66d9ef">then</span>
   exec startx
 <span style="color:#66d9ef">fi</span>
 </code></pre></div><h3 id="hidpi注意事项">HiDPI注意事项</h3>
@@ -123,11 +120,11 @@ Xft.rgba: rgb
 # 200% - 192
 Xft.dpi: 168
 </code></pre><p>经过上述的设置后，需要将<code>.Xresources</code>文件通过以下命令merge到<code>xinitrc</code>中才能生效：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">xrdb -merge ~/.Xresources
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">xrdb -merge ~/.Xresources
 </code></pre></div><p>查看该命令是否成功，可以查看<code>~/.xinitrc</code>文件中有没有下面所列,没有话的可以手动加入</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[[</span> -f ~/.Xresources <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> xrdb -merge -I$HOME ~/.Xresources
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#f92672">[[</span> -f ~/.Xresources <span style="color:#f92672">]]</span> <span style="color:#f92672">&amp;&amp;</span> xrdb -merge -I$HOME ~/.Xresources
 </code></pre></div><p>对于QT程序，在<code>~/.xinitrc</code>中加入：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export QT_AUTO_SCREEN_SCALE_FACTOR<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">export QT_AUTO_SCREEN_SCALE_FACTOR<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 </code></pre></div><p>经过以上的设置，大部分程序应该都能够在4k屏下良好地显示了，可能还会有些程序会遇到一些问题，可以查看<a href="https://wiki.archlinux.org/index.php/HiDPI">Archlinux
 Wiki - HiDPI条目</a>解决。</p>
 <h3 id="bspwm的基本设置">bspwm的基本设置</h3>
@@ -138,7 +135,7 @@ Wiki - HiDPI条目</a>解决。</p>
 </ul>
 <p>这两个配置文件非常容易上手，下面就贴一些我常用的设置</p>
 <h4 id="bspwmrc设置">bspwmrc设置</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 启动Compositor,主要用于一些特殊效果，如透明背景，阴影等</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 启动Compositor,主要用于一些特殊效果，如透明背景，阴影等</span>
 <span style="color:#75715e"># 这里还可以增加一些自启动的程序，比如我还增加了fcitx</span>
 picom -b &amp; 
 fcitx &amp;
@@ -173,9 +170,9 @@ bspc rule -a <span style="color:#e6db74">&#34;VirtualBox Machine&#34;</span> sta
 <p>特别注意，窗口为Floating模式时，按住Super键不松开，可以用鼠标左键移动窗口位置，使用鼠标右键调整窗口大小</p>
 </blockquote>
 <h2 id="terminal模拟器-alacritty">Terminal模拟器 <code>alacritty</code></h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    sudo pacman -S alacritty
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">    sudo pacman -S alacritty
 </code></pre></div><p><code>alacritty</code>号称是用上了GPU加速的最快Terminal Emulator。安装后可以在配置文件<code>$HOME/.config/alacritty/alacritty.yml</code>中进行调整。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#设置字体</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#75715e">#设置字体</span>
     <span style="color:#f92672">font</span>:
       <span style="color:#f92672">normal</span>:
         <span style="color:#f92672">family</span>: <span style="color:#ae81ff">Source Code Pro</span>
@@ -197,7 +194,7 @@ bspc rule -a <span style="color:#e6db74">&#34;VirtualBox Machine&#34;</span> sta
 </code></pre></div><p>主题可从<a href="https://github.com/alacritty/alacritty/wiki/Color-schemes">Alacritty
 Wiki</a>中找到，粘贴过来即可。</p>
 <h2 id="文件管理器-ranger">文件管理器 ranger</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S ranger
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S ranger
 </code></pre></div><p><code>ranger</code>是一个用于文件浏览与管理的CLI程序，非常适合在Tiling Window
 Manager下使用。ranger是用python编写的，如果介意，也可以使用golang写的lfw代替。</p>
 <p><code>ranger</code>基本操作和vim相同，<code>j, k</code>用来上下选择文件，<code>h, l</code>用来进上上级目录和子目录，如果是文件<code>l, ENTER</code>会打开文件或者执行文件。打开文件使用
@@ -207,10 +204,10 @@ ranger的配置文件位于<code>$HOME/.config/ranger</code>，具体配置方�
 <h2 id="图片浏览与壁纸设置">图片浏览与壁纸设置</h2>
 <p>图像浏览软件使用<code>feh</code>和<code>sxiv</code>,
 其中<code>feh</code>用于设置壁纸，<code>sxiv</code>用于浏览图片和操作图片。要提一下的是，<code>feh</code>也可以用于图片的浏览，但是貌似不支持快捷键对图片进行文件操作，所以还是额外安装了<code>sxiv</code>用于图片的浏览和简单操作。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S feh sxiv
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">sudo pacman -S feh sxiv
 </code></pre></div><h3 id="壁纸配置-feh">壁纸配置 feh</h3>
 <p><code>feh</code>主要用于壁纸的设置。使用命令：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">feh --bg-fill IMAGE_FILEPATH
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">feh --bg-fill IMAGE_FILEPATH
 feh --bg-tile IMAGE_FILEPATH
 feh --bg-scale IMAGE_FILEPATH
 feh --bg-center IMAGE_FILEPATH
@@ -228,7 +225,7 @@ feh --bg-max IMAGE_FILEPATH
 <code>f</code>用于全屏和窗口模式切换；在打开含有图片的目录时，<code>space</code>是下一图片，<code>backspace</code>是上一图片，更多按键请查看manpage。此处，它还支持绑定一组额外的快捷键，首先使用<code>Ctrl+X</code>开启，随后再使用定义的快捷键用于操作图片文件。根据<a href="https://wiki.archlinux.org/index.php/Sxiv">Archlinux
 Wiki</a>中的例子，可以在<code>~/.config/sxiv/exec/key-handler</code>中定义一些快捷键，别忘记了该文件要加可执行的权限。</p>
 <p>脚本如下所示：</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e">#!/bin/sh
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">while</span> read file
 <span style="color:#66d9ef">do</span>
         <span style="color:#66d9ef">case</span> <span style="color:#e6db74">&#34;</span>$1<span style="color:#e6db74">&#34;</span> in
@@ -245,15 +242,14 @@ Wiki</a>中的例子，可以在<code>~/.config/sxiv/exec/key-handler</code>中�
 </code></pre></div><p>其中，<code>Ctrl+X Ctrl+D</code>用于删除文件,
 <code>Ctrl+X Ctrl+C</code>将文件保存在<code>X</code>的剪贴版中，<code>Ctrl+X Ctrl+B</code>用于将当前图片设置为壁纸。<code>Ctrl+X Ctrl+R</code>则用于旋转图片。
 同时安装<code>sxiv-rifle</code>包，这样在<code>ranger</code>中打开图片时，就可以同时浏览该目录下的所有文件了。</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yay -S sxiv-rifle
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">yay -S sxiv-rifle
 </code></pre></div><p>特别的，可以将<code>sxiv</code>设置为Floating模式的窗口，这样可能会比较方便一些。在<code>bspwmrc</code>中设置<code>sxiv</code>窗口为Floating窗口模式</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">bspc rule -a Sxiv state<span style="color:#f92672">=</span>floating
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">bspc rule -a Sxiv state<span style="color:#f92672">=</span>floating
 </code></pre></div>
   </section>
   <footer>
-    <div class="social-share" 
-    data-sites="weibo,wechat,twitter,facebook,douban" 
-    data-mobile-sites="weibo,wechat,twitter"></div>
+    
+
     
     <div id="disqus_thread"></div>
     <script>

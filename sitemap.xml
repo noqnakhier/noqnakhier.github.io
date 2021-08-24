@@ -1,104 +1,58 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://naxiro.com/about/</loc>
     <lastmod>2020-10-07T15:19:33+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/archlinux_move_root_partition/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/tags/linux/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/tags/partition/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/tags/root/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/tags/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/archlinux_bspwm/</loc>
     <lastmod>2020-04-30T13:34:05+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/rpgmaker_mv_error/</loc>
     <lastmod>2020-04-29T22:27:08+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/clash-time-error/</loc>
     <lastmod>2020-03-15T20:40:42+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/my-first-post-in-hugo/</loc>
     <lastmod>2019-04-16T21:14:18+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/tags/bash/</loc>
     <lastmod>2017-10-07T23:23:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/tags/editor/</loc>
     <lastmod>2017-10-07T23:23:07+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/2017-10-07-post/</loc>
     <lastmod>2017-10-07T23:23:07+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://naxiro.com/tags/life/</loc>
-    <lastmod>2017-01-21T00:29:43+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/</loc>
-    <lastmod>2017-01-21T00:29:43+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/tags/kde/</loc>
     <lastmod>2017-01-16T21:37:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
     <lastmod>2017-01-16T21:37:48+08:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://naxiro.com/categories/</loc>
   </url>
-  
 </urlset>
