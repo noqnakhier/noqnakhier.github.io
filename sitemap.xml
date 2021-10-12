@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://naxiro.com/posts/linux-hidpi-nutstore/</loc>
+    <lastmod>2021-10-12T15:55:24+08:00</lastmod>
+  </url><url>
+    <loc>https://naxiro.com/posts/</loc>
+    <lastmod>2021-10-12T15:55:24+08:00</lastmod>
+  </url><url>
+    <loc>https://naxiro.com/</loc>
+    <lastmod>2021-10-12T15:55:24+08:00</lastmod>
+  </url><url>
     <loc>https://naxiro.com/about/</loc>
     <lastmod>2020-10-07T15:19:33+08:00</lastmod>
   </url><url>
@@ -14,16 +23,10 @@
     <loc>https://naxiro.com/tags/partition/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
   </url><url>
-    <loc>https://naxiro.com/posts/</loc>
-    <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url><url>
     <loc>https://naxiro.com/tags/root/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
   </url><url>
     <loc>https://naxiro.com/tags/</loc>
-    <lastmod>2020-05-10T12:00:05+08:00</lastmod>
-  </url><url>
-    <loc>https://naxiro.com/</loc>
     <lastmod>2020-05-10T12:00:05+08:00</lastmod>
   </url><url>
     <loc>https://naxiro.com/posts/archlinux_bspwm/</loc>

@@ -4,9 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
   
-  <title>爆发</title>
-  <meta property="og:title" content="爆发" />
-  <meta name="twitter:title" content="爆发" />
+  <title>Linux下HiDPI下坚果云界面缩放问题</title>
+  <meta property="og:title" content="Linux下HiDPI下坚果云界面缩放问题" />
+  <meta name="twitter:title" content="Linux下HiDPI下坚果云界面缩放问题" />
   
 
   
@@ -17,7 +17,7 @@
 
   <meta name="author" content=""/>
   <meta property="og:site_name" content="七上八下" />
-  <meta property="og:url" content="https://naxiro.com/posts/2017-01-21-%E7%88%86%E5%8F%91/" />
+  <meta property="og:url" content="https://naxiro.com/posts/linux-hidpi-nutstore/" />
 
   
   <meta name="twitter:card" content="summary" />
@@ -72,35 +72,33 @@ if (!doNotTrack) {
 
 <article class="p-article">
   <header>
-    <h1>爆发</h1>
+    <h1>Linux下HiDPI下坚果云界面缩放问题</h1>
     <div>
       
         <div class="c-time">
           Posted on
-<time datetime="2017-01-21T00:29:43&#43;08:00">
-  Jan 21, 2017
+<time datetime="2021-10-12T15:55:24&#43;08:00">
+  Oct 12, 2021
 </time>
 
         </div>
       
       
-      <a href="https://naxiro.com/tags/life" class="c-tag">life</a>
-      
     </div>
   </header>
   
   <section id="js-article" class="p-article__body">
-    <p>咚
-咚
-孩子停止了吵闹
-我的内心
-到底是哭是笑</p>
-<p>最后的结果
-就是那样
-看吧看吧
-谁能比谁更烂</p>
-<p>哈哈哈
-闹太套</p>
+    <p>用的4K显示器，原先喜欢折腾各种Window Manager, 现在年纪大了，不善折腾了，所以切回了KDE Plasma桌面环境。Plasma对高分辨率的显示器很友好，只要使用系统设置中自带的缩放功能，就能基本已经解决绝大多数的程序缩放问题。但是发现坚果云客户端界面一直出现问题，UI元素很小，字体全部挤在一起，虽然勉强能使用，但是看着着实闹心。</p>
+<p><img src="unscaled-ui.png" alt=""></p>
+<p>打开稍微查看一下源代码，原来是用GTK写的。不知道怎么回事，没有读取到系统设置中的缩放选项，那就自己解决吧。</p>
+<p>如果你是像我一样手动安装的，那么应该你的nustore的文件夹可以在HOME目录下找到。有关启动nutstore的是<code>~/.nutstore/dist/gnome-config/autostart/nutstore-daemon.desktop</code>和<code>~/.nutstore/dist/gnome-config/menu/nutstore-menu.desktop</code>两个文件。其中autostart文件夹中的desktop文件是用于开机自动启动程序的，另一个是用于系统菜单中的启动器。它俩基本没有区别，都是启动<code>~/.nutstore/dist/bin/nutstore-pydeamon.py</code>这个文件，区别是autostart中的那个增加了延时30秒的设定。现在只需要在两个启动命令前加上<code>GDK_SCALE=2</code>和<code>GDK_DPI_SCALE=0.5</code>两个环境变量即可。</p>
+<p>修改后<code>Exec=</code>的结果为</p>
+<p>autostart/nutstore-deamon.desktop</p>
+<pre tabindex="0"><code>Exec=sh -c &quot;(sleep 30 &amp;&amp; exec env GDK_SCALE=2 env GDK_DPI_SCALE=0.5 ~/.nutstore/dist/bin/nutstore-pydaemon.py)&quot;
+</code></pre><p>gnome-config/nustore-menu.desktop</p>
+<pre tabindex="0"><code>Exec=sh -c &quot;exec env GDK_SCALE=2 env GDK_DPI_SCALE=0.5 ~/.nutstore/dist/bin/nutstore-pydaemon.py&quot;
+</code></pre><p>最后重新运行命令<code>~/.nustore/bin/install_core.sh</code>覆盖安装一下，再重新启动坚果云程序，终于正常了，不再闹心了。</p>
+<p><img src="scaled-ui.png" alt=""></p>
 
   </section>
   <footer>
@@ -123,12 +121,11 @@ if (!doNotTrack) {
       <div class="c-pagination__ctrl">
         <div class="c-pagination__newer">
           
-          <a href="https://naxiro.com/posts/2017-10-07-post/">Newer</a>
           
         </div>
         <div class="c-pagination__older">
           
-          <a href="https://naxiro.com/posts/kde5%E4%B8%ADkonsole%E4%B8%AD%E6%96%87%E5%AD%97%E4%BD%93%E8%A2%AB%E6%88%AA%E6%96%AD%E7%9A%84%E4%B8%B4%E6%97%B6%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/">Older</a>
+          <a href="https://naxiro.com/posts/archlinux_move_root_partition/">Older</a>
           
         </div>
       </div>

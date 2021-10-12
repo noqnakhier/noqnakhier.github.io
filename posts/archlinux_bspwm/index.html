@@ -29,7 +29,7 @@
   
   
   
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -97,7 +97,7 @@ if (!doNotTrack) {
 <span style="color:#66d9ef">fi</span>
 </code></pre></div><h3 id="hidpi注意事项">HiDPI注意事项</h3>
 <p>个人显示器是4k屏，所以需要进行额外的设置，在<code>$HOME/.Xresources</code>中贴下如下代码:</p>
-<pre><code class="language-xdefaults" data-lang="xdefaults">Xft.autohint: 0
+<pre tabindex="0"><code class="language-xdefaults" data-lang="xdefaults">Xft.autohint: 0
 
 Xft.lcdfilter:  lcddefault
 
@@ -163,7 +163,7 @@ bspc rule -a <span style="color:#e6db74">&#34;VirtualBox Machine&#34;</span> sta
 就像上面配置中<code>VirtualBox Manager</code>一样。</p>
 <h4 id="sxhkd设置">sxhkd设置</h4>
 <p>sxhkdrc文件也非常容易配置，整体规则就是</p>
-<pre><code>HotKey
+<pre tabindex="0"><code>HotKey
     Command
 </code></pre><p>这部分非常简单，根据自己喜好更改即可。由于我是从<code>i3</code>迁移过来的，所以一些键位习惯和<code>i3</code>基本相同的。</p>
 <blockquote>
@@ -213,10 +213,10 @@ feh --bg-scale IMAGE_FILEPATH
 feh --bg-center IMAGE_FILEPATH
 feh --bg-max IMAGE_FILEPATH
 </code></pre></div><p>同时<code>feh</code>可以随机选择某个目录中的图片做为壁纸。使用<code>--recursive</code>还能同时使用子目录中的图片。</p>
-<pre><code>feh --bg-fill --randomize --recursive IMAGES_DIR_PATH
+<pre tabindex="0"><code>feh --bg-fill --randomize --recursive IMAGES_DIR_PATH
 </code></pre><p>结合<code>sxhkd</code>， 可以将更换壁纸绑到到快揵键上，这样就能方便的随机切换壁纸。我一般会绑定到<code>super+b</code>,同时我还会绑定一个快捷键<code>super+shift+b</code> ,
 用于随机选择另一个目录中图片做为壁纸，那是一些NSFW的图片，比较适合在家里使用。在<code>sxhkdrc</code>中绑定</p>
-<pre><code>super + {_, shift +}b
+<pre tabindex="0"><code>super + {_, shift +}b
     feh --recursive --randomize --bg-fill ~/Pictures/{backgrounds,nsfw}
 </code></pre><p>同时在<code>bspwmrc</code>中添加<code>feh</code>，这样在启动时就可以应用壁纸。
 如果需要定时切换壁纸，可以结合使用<code>cron</code>设置定时任务</p>

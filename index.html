@@ -28,7 +28,7 @@
   <meta property="og:type" content="website" />
   
   
-  <meta name="generator" content="Hugo 0.87.0" />
+  <meta name="generator" content="Hugo 0.88.1" />
   
 <script type="application/javascript">
 var doNotTrack = false;
@@ -73,6 +73,32 @@ if (!doNotTrack) {
 
 
   
+  <article class="c-article p-list-article">
+  <header>
+    <h2 class="c-title c-article__title"><a href="https://naxiro.com/posts/linux-hidpi-nutstore/">Linux下HiDPI下坚果云界面缩放问题</a></h2>
+    <p class="c-article__meta">
+      Posted on
+<time datetime="2021-10-12T15:55:24&#43;08:00">
+  Oct 12, 2021
+</time>
+
+    </p>
+  </header>
+  <div class="c-article__summary">
+    用的4K显示器，原先喜欢折腾各种Window Manager, 现在年纪大了，不善折腾了，所以切回了KDE Plasma桌面环境。Plasma对高分辨率的显示器很友好，只要使用系统设置中自带的缩放功能，就能基本已经解决绝大多数的程序缩放问题。但是发现坚果云客户端界面一直出现问题，UI元素很小，字体全部挤在一起，虽然勉强能使用，但是看着着实闹心。
+打开稍微查看一下源代码，原来是用GTK写的。不知道怎么回事，没有读取到系统设置中的缩放选项，那就自己解决吧。
+如果你是像我一样手动安装的，那么应该你的nustore的文件夹可以在HOME目录下找到。有关启动nutstore的是~/.nutstore/dist/gnome-config/autostart/nutstore-daemon.desktop和~/.nutstore/dist/gnome-config/menu/nutstore-menu.desktop两个文件。其中autostart文件夹中的desktop文件是用于开机自动启动程序的，另一个是用于系统菜单中的启动器。它俩基本没有区别，都是启动~/.nutstore/dist/bin/nutstore-pydeamon.py这个文件，区别是autostart中的那个增加了延时30秒的设定。现在只需要在两个启动命令前加上GDK_SCALE=2和GDK_DPI_SCALE=0.5两个环境变量即可。
+修改后Exec=的结果为
+autostart/nutstore-deamon.desktop
+Exec=sh -c &quot;(sleep 30 &amp;&amp; exec env GDK_SCALE=2 env GDK_DPI_SCALE=0.5 ~/.nutstore/dist/bin/nutstore-pydaemon.py)&quot; gnome-config/nustore-menu.desktop
+Exec=sh -c &quot;exec env GDK_SCALE=2 env GDK_DPI_SCALE=0.5 ~/.nutstore/dist/bin/nutstore-pydaemon.py&quot; 最后重新运行命令~/.nustore/bin/install_core.sh覆盖安装一下，再重新启动坚果云程序，终于正常了，不再闹心了。
+  </div>
+  
+</article>
+
+
+  
+    
   <article class="c-article p-list-article">
   <header>
     <h2 class="c-title c-article__title"><a href="https://naxiro.com/posts/archlinux_move_root_partition/">Archlinux Root根目录硬盘迁移</a></h2>
